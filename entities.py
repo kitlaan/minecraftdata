@@ -38,6 +38,7 @@ class Axe(Tool): pass
 class Pickaxe(Tool): pass
 class Sword(Tool): pass
 class Shovel(Tool): pass
+class Hoe(Tool): pass
 class Armor(Item): pass
 class Helmet(Armor): pass
 class Chestplate(Armor): pass
@@ -58,7 +59,7 @@ class Grass(Dirt):                              _id = 2;    _txt = "Grass"
 
 class Cobblestone(Stone):                       _id = 4;    _txt = "Cobblestone"
 
-class WoodenPlank(Block):                       _id = 5;    _txt = "Wooden Planks"
+class WoodenPlank(Block):                       _id = 5;    _txt = "Wooden Plank"
 
 class Sapling(Block):                           _id = 6;    _txt = "Sapling"
 
@@ -70,11 +71,11 @@ class Bedrock(Block):                           _id = 7;    _txt = "Bedrock"
 
 class Water(FluidBlock):                        _id = 8;    _txt = "Water"
 
-class StillWater(Water):                        _id = 9;    _txt = "Water (Still)"
+class StillWater(Water):                        _id = 9;    _txt = "Water (Stationary)"
 
 class Lava(FluidBlock):                         _id = 10;   _txt = "Lava"
 
-class StillLava(Lava):                          _id = 11;   _txt = "Lava (Still)"
+class StillLava(Lava):                          _id = 11;   _txt = "Lava (Stationary)"
 
 class Sand(FallingBlock):                       _id = 12;   _txt = "Sand"
 
@@ -86,15 +87,15 @@ class IronOre(OreBlock):                        _id = 15;   _txt = "Ore (Iron)"
 
 class CoalOre(OreBlock):                        _id = 16;   _txt = "Ore (Coal)"
 
-class Wood(Block):                              _id = 17;   _txt = "Wood"
+class Wood(Block):                              _id = 17;   _txt = "Wood (Oak)"
 
-class SpruceWood(Wood):                         _ext = 1;   _txt = "Wood (Spruce)"
+class PineWood(Wood):                           _ext = 1;   _txt = "Wood (Pine)"
 
 class BirchWood(Wood):                          _ext = 2;   _txt = "Wood (Birch)"
 
 class Leaves(Block):                            _id = 18;   _txt = "Leaves"
 
-class SpruceLeaves(Leaves):                     _ext = 1;   _txt = "Leaves (Spruce)"
+class PineLeaves(Leaves):                       _ext = 1;   _txt = "Leaves (Pine)"
 
 class BirchLeaves(Leaves):                      _ext = 2;   _txt = "Leaves (Birch)"
 
@@ -112,7 +113,7 @@ class Sandstone(Block):                         _id = 24;   _txt = "Sandstone"
 
 class NoteBlock(UsableBlock, Circuit):          _id = 25;   _txt = "Note Block"
 
-class BedFootBlock(UsableBlock):                _id = 26;   _txt = "Bed (Foot)"
+class BedFootBlock(UsableBlock):                _id = 26;   _txt = "Bed"
 
 class BedHeadBlock(BedFootBlock):               _ext = 1;   _txt = "Bed (Head)"
 
@@ -123,6 +124,10 @@ class PoweredRail(Rail, Circuit):               _id = 27;   _txt = "Rail (Powere
 class DetectorRail(Rail, Circuit):              _id = 28;   _txt = "Rail (Detector)"
 
 class Web(Block):                               _id = 30;   _txt = "Web"
+
+class TallGrass(Block):                         _id = 31;   _txt = "Tall Grass"
+
+class DeadShrub(Block):                         _id = 32;   _txt = "Dead Shrub"
 
 class Wool(Block):                              _id = 35;   _txt = "Wool (White)"
 
@@ -184,7 +189,7 @@ class WoodenSlab(StoneSlab):                    _ext = 2;   _txt = "Slab (Wooden
 
 class CobblestoneSlab(StoneSlab):               _ext = 3;   _txt = "Slab (Cobblestone)"
 
-class BrickBlock(Block):                        _id = 45;   _txt = "Bricks"
+class BrickBlock(Block):                        _id = 45;   _txt = "Brick Block"
 
 class TNT(UsableBlock):                         _id = 46;   _txt = "TNT"
 
@@ -242,21 +247,21 @@ class RedstoneOre(OreBlock):                    _id = 73;   _txt = "Ore (Redston
 
 class GlowingRedstoneOre(RedstoneOre):          _id = 74;   _txt = "Ore (Redstone, Glowing)"
 
-class RedstoneTorch(Block, Circuit):            _id = 75;   _txt = "Redstone Torch (off)"
+class RedstoneTorch(Block, Circuit):            _id = 76;   _txt = "Redstone Torch"
 
-class LitRedstoneTorch(RedstoneTorch):          _id = 76;   _txt = "Redstone Torch (on)"
+class UnlitRedstoneTorch(RedstoneTorch):        _id = 75;   _txt = "Redstone Torch (off)"
 
 class Button(UsableBlock, Circuit):             _id = 77;   _txt = "Button"
 
-class SnowLayer(Block):                         _id = 78;   _txt = "Snow Layer"
+class SnowLayer(Block):                         _id = 78;   _txt = "Snow"
 
 class Ice(Block):                               _id = 79;   _txt = "Ice"
 
-class Snow(Block):                              _id = 80;   _txt = "Snow"
+class SnowBlock(ResourceBlock):                 _id = 80;   _txt = "Snow Block"
 
 class Cactus(Block):                            _id = 81;   _txt = "Cactus"
 
-class Clay(Block):                              _id = 82;   _txt = "Clay"
+class ClayBlock(ResourceBlock):                 _id = 82;   _txt = "Block (Clay)"
 
 class SugarCane(Block):                         _id = 83;   _txt = "Sugar Cane"
 
@@ -270,19 +275,25 @@ class Netherrack(Block):                        _id = 87;   _txt = "Netherrack"
 
 class SoulSand(Block):                          _id = 88;   _txt = "Soul Sand"
 
-class Glowstone(Block):                         _id = 89;   _txt = "Glowstone"
+class GlowstoneBlock(ResourceBlock):            _id = 89;   _txt = "Block (Glowstone)"
 
 class Portal(Block):                            _id = 90;   _txt = "Portal"
 
 class JackOLantern(Block):                      _id = 91;   _txt = "Jack-o-lantern"
 
-class CakeBlock(Block):                         _id = 92;   _txt = "Cake Block"
+class CakeBlock(Block, Food):                   _id = 92;   _txt = "Cake Block"
 
-"""
-  93    Redstone Repeater (off)
-  94    Redstone Repeater (on)
-  95    Locked Chest
-"""
+class RedstoneRepeater(UsableBlock):            _id = 93;   _txt = "Redstone Repeater"
+
+class OnRedstoneRepeater(RedstoneRepeater):     _id = 94;   _txt = "Redstone Repeater (on)"
+
+class LockedChest(Chest):                       _id = 95;   _txt = "Chest (Locked)"
+
+class Trapdoor(UsableBlock):                    _id = 96;   _txt = "Trapdoor"
+
+
+# = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 
 class IronShovel(Shovel):                       _id = 256;  _txt = "Shovel (Iron)"
 
@@ -306,56 +317,103 @@ class Diamond(Item):                            _id = 264;  _txt = "Diamond"
 
 class IronIngot(Item):                          _id = 265;  _txt = "Ingot (Iron)"
 
+class GoldIngot(Item):                          _id = 266;  _txt = "Ingot (Gold)"
+
+class IronSword(Sword):                         _id = 267;  _txt = "Sword (Iron)"
+
+class WoodenSword(Sword):                       _id = 268;  _txt = "Sword (Wooden)"
+
+class WoodenShovel(Shovel):                     _id = 269;  _txt = "Shovel (Wooden)"
+
+class WoodenPickaxe(Pickaxe):                   _id = 270;  _txt = "Pickaxe (Wooden)"
+
+class WoodenAxe(Axe):                           _id = 271;  _txt = "Axe (Wooden)"
+
+class StoneSword(Sword):                        _id = 272;  _txt = "Sword (Stone)"
+
+class StoneShovel(Shovel):                      _id = 273;  _txt = "Shovel (Stone)"
+
+class StonePickaxe(Pickaxe):                    _id = 274;  _txt = "Pickaxe (Stone)"
+
+class StoneAxe(Axe):                            _id = 275;  _txt = "Axe (Stone)"
+
+class DiamondSword(Sword):                      _id = 276;  _txt = "Sword (Diamond)"
+
+class DiamondShovel(Shovel):                    _id = 277;  _txt = "Shovel (Diamond)"
+
+class DiamondPickaxe(Pickaxe):                  _id = 278;  _txt = "Pickaxe (Diamond)"
+
+class DiamondAxe(Axe):                          _id = 279;  _txt = "Axe (Diamond)"
+
+class Stick(Item):                              _id = 280;  _txt = "Stick"
+
+class Bowl(Item):                               _id = 281;  _txt = "Bowl"
+
+class MushroomStew(Food):                       _id = 282;  _txt = "Mushroom Stew"
+
+class GoldSword(Sword):                         _id = 283;  _txt = "Sword (Gold)"
+
+class GoldShovel(Shovel):                       _id = 284;  _txt = "Shovel (Gold)"
+
+class GoldPickaxe(Pickaxe):                     _id = 285;  _txt = "Pickaxe (Gold)"
+
+class GoldAxe(Axe):                             _id = 286;  _txt = "Axe (Gold)"
+
+class String(Item):                             _id = 287;  _txt = "String"
+
+class Feather(Item):                            _id = 288;  _txt = "Feather"
+
+class Gunpowder(Item):                          _id = 289;  _txt = "Gunpowder"
+
+class WoodenHoe(Hoe):                           _id = 290;  _txt = "Hoe (Wooden)"
+
+class StoneHoe(Hoe):                            _id = 291;  _txt = "Hoe (Stone)"
+
+class IronHoe(Hoe):                             _id = 292;  _txt = "Hoe (Iron)"
+
+class DiamondHoe(Hoe):                          _id = 293;  _txt = "Hoe (Diamond)"
+
+class GoldHoe(Hoe):                             _id = 294;  _txt = "Hoe (Gold)"
+
+class Seed(Item):                               _id = 295;  _txt = "Seed"
+
+class Wheat(Item):                              _id = 296;  _txt = "Wheat"
+
+class Bread(Food):                              _id = 297;  _txt = "Bread"
+
+class LeatherHelmet(Helmet):                    _id = 298;  _txt = "Helmet (Leather)"
+
+class LeatherChestplate(Chestplate):            _id = 299;  _txt = "Chestplate (Leather)"
+
+class LeatherLeggings(Legging):                 _id = 300;  _txt = "Leggings (Leather)"
+
+class LeatherBoots(Boot):                       _id = 301;  _txt = "Boots (Leather)"
+
+class ChainmailHelmet(Helmet):                  _id = 302;  _txt = "Helmet (Chainmail)"
+
+class ChainmailChestplate(Chestplate):          _id = 303;  _txt = "Chestplate (Chainmail)"
+
+class ChainmailLeggings(Legging):               _id = 304;  _txt = "Leggings (Chainmail)"
+
+class ChainmailBoots(Boot):                     _id = 305;  _txt = "Boots (Chainmail)"
+
+class IronHelmet(Helmet):                       _id = 306;  _txt = "Helmet (Iron)"
+
+class IronChestplate(Chestplate):               _id = 307;  _txt = "Chestplate (Iron)"
+
+class IronLeggings(Legging):                    _id = 308;  _txt = "Leggings (Iron)"
+
+class IronBoots(Boot):                          _id = 309;  _txt = "Boots (Iron)"
+
+class DiamondHelmet(Helmet):                    _id = 310;  _txt = "Helmet (Diamond)"
+
+class DiamondChestplate(Chestplate):            _id = 311;  _txt = "Chestplate (Diamond)"
+
+class DiamondLeggings(Legging):                 _id = 312;  _txt = "Leggings (Diamond)"
+
+class DiamondBoots(Boot):                       _id = 313;  _txt = "Boots (Diamond)"
 
 """
- 266   	Gold_Ingot
- 267   	Iron_Sword
- 268   	Wooden_Sword
- 269   	Wooden_Shovel
- 270   	Wooden_Pickaxe
- 271   	Wooden_Axe
- 272   	Stone_Sword
- 273   	Stone_Shovel
- 274   	Stone_Pickaxe
- 275   	Stone_Axe
- 276   	Diamond_Sword
- 277   	Diamond_Shovel
- 278   	Diamond_Pickaxe
- 279   	Diamond_Axe
- 280   	Stick
- 281   	Bowl
- 282   	Mushrom_Stew
- 283   	Gold_Sword
- 284   	Gold_Shovel
- 285   	Gold_Pickaxe
- 286   	Gold_Axe
- 287   	String
- 288   	Feather
- 289   	Gunpoweder
- 290   	Wooden_Hoe
- 291   	Stone_Hoe
- 292   	Iron_Hoe
- 293   	Diamond_Hoe
- 294   	Gold_Hoe
- 295   	Seeds
- 296   	Wheat
- 297   	Bread
- 298   	Leather_Cap
- 299   	Leather_Tunic
- 300   	Leather_Pants
- 301   	Leather_Boots
- 302   	Chainmail_Helmet
- 303   	Chainmail_Chestplate
- 304   	Chainmail_Leggings
- 305   	Chainmail_Boots
- 306   	Iron_Helmet
- 307   	Iron_Chestplate
- 308   	Iron_Leggings
- 309   	Iron_Boots
- 310   	Diamond_Face
- 311   	Diamond_Chestplate
- 312   	Diamond_Leggings
- 313   	Diamond_Boots
  314   	Gold_Helmet
  315   	Gold_Chestplate
  316   	Gold_Leggings
@@ -412,23 +470,28 @@ class IronIngot(Item):                          _id = 265;  _txt = "Ingot (Iron)
  352   	Bone
  353   	Sugar
  354   	Cake Item
- 355    Bed Item
- 356    Redstone Repeater Item
- 357    Cookie
-2256   	Gold_Music_Disk
-2257   	Green_Music_Disk
 """
 
-# = = = = = = =
+class BedItem(Item):                            _id = 355;  _txt = "Bed Item"
+
+class RedstoneRepeaterItem(Item):               _id = 356;  _txt = "Redstone Repeater Item"
+
+class Cookie(Food):                             _id = 357;  _txt = "Cookie"
+
+class Map(Item):                                _id = 358;  _txt = "Map"
+
+class GoldMusicDisk(Item):                      _id = 2256; _txt = "Music Disk (Gold)"
+
+class GreenMusicDisk(Item):                     _id = 2257; _txt = "Music Disk (Green)"
+
+# = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
-# = = = = = = =
-
-for e in Entity._types:
-    if isinstance(Entity._types[e], dict):
-        for d in Entity._types[e]:
-            print "%4d (%2d) --> %s" % (e, d, Entity._types[e][d]._txt)
-    else:
-        print "%4d      --> %s" % (e, Entity._types[e]._txt)
-
+if __name__ == "__main__":
+    for e in sorted(Entity._types):
+        if isinstance(Entity._types[e], dict):
+            for d in sorted(Entity._types[e]):
+                print "%4d (%2d) --> %s" % (e, d, Entity._types[e][d]._txt)
+        else:
+            print "%4d      --> %s" % (e, Entity._types[e]._txt)
 
