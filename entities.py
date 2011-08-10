@@ -413,23 +413,39 @@ class DiamondLeggings(Legging):                 _id = 312;  _txt = "Leggings (Di
 
 class DiamondBoots(Boot):                       _id = 313;  _txt = "Boots (Diamond)"
 
+class GoldHelmet(Helmet):                       _id = 314;  _txt = "Helmet (Gold)"
+
+class GoldChestplate(Chestplate):               _id = 315;  _txt = "Chestplate (Gold)"
+
+class GoldLeggings(Legging):                    _id = 316;  _txt = "Leggings (Gold)"
+
+class GoldBoots(Boot):                          _id = 317;  _txt = "Boots (Gold)"
+
+class Flint(Item):                              _id = 318;  _txt = "Flint"
+
+class RawPorkchop(Food):                        _id = 319;  _txt = "Porkchop (Raw)"
+
+class CookedPorkchop(RawPorkchop):              _id = 320;  _txt = "Porkchop (Cooked)"
+
+class Painting(Item):                           _id = 321;  _txt = "Painting"
+
+class GoldenApple(Food):                        _id = 322;  _txt = "Golden Apple"
+
+class Sign(Item):                               _id = 323;  _txt = "Sign"
+
+class WoodenDoorItem(Item):                     _id = 324;  _txt = "Door Item (Wooden)"
+
+class Bucket(Item):                             _id = 325;  _txt = "Bucket"
+
+class WaterBucket(Bucket):                      _id = 326;  _txt = "Bucket (Water)"
+
+class LavaBucket(Bucket):                       _id = 327;  _txt = "Bucket (Lava)"
+
+class Minecart(Item):                           _id = 328;  _txt = "Minecart"
+
+class Saddle(Item):                             _id = 329;  _txt = "Saddle"
+
 """
- 314   	Gold_Helmet
- 315   	Gold_Chestplate
- 316   	Gold_Leggings
- 317   	Gold_Boots
- 318   	Flint
- 319   	Raw_Porkchop
- 320   	Porkchop Cooked
- 321   	Painting
- 322   	Golden_Apple
- 323   	Sign Item
- 324   	Wooden_Door Item
- 325   	Bucket
- 326   	Water_Bucket
- 327   	Lava_Bucket
- 328   	Minecart
- 329   	Saddle
  330   	Iron_Door Item
  331   	Redstone Dust
  332   	Snowball
@@ -453,12 +469,6 @@ class DiamondBoots(Boot):                       _id = 313;  _txt = "Boots (Diamo
  350   	Cooked_Fish
  351x0 	Ink_Sack
  351x1 	Rose_Red
- 351x10	Lime_Dye
- 351x11	Dandelion_Yellow
- 351x12	Light_Blue_Dye
- 351x13	Magenta_Dye
- 351x14	Orange_Dye
- 351x15	Bone_Meal
  351x2 	Cactus_Green
  351x3 	Coco_Beans
  351x4 	Lapis_Lazuli
@@ -467,6 +477,12 @@ class DiamondBoots(Boot):                       _id = 313;  _txt = "Boots (Diamo
  351x7 	Light_Gray_Dye
  351x8 	Gray_Dye
  351x9 	Pink_Dye
+ 351x10	Lime_Dye
+ 351x11	Dandelion_Yellow
+ 351x12	Light_Blue_Dye
+ 351x13	Magenta_Dye
+ 351x14	Orange_Dye
+ 351x15	Bone_Meal
  352   	Bone
  353   	Sugar
  354   	Cake Item
